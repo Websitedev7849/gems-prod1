@@ -37,12 +37,19 @@
     border: none;
 }
 
+/* Activities section starts */
 
+.activity .img-container {
+    width: 18rem;
+    height: 11rem;
+}
 
- /* Small devices (landscape phones, 576px and up) */
+/* Activities section ends */
+
+ /* if screen size exceeds Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {  }
 
-/* Medium devices (tablets, 768px and up) */
+/* if screen size exceeds Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
     .hero .inner-hero {
         margin-top: 6rem;
@@ -52,10 +59,19 @@
     .hero .inner-hero .texts{
         max-width: 35rem;
     }
+ 
+    /* Activities section starts */
+
+    .activities {
+        max-width: 80%;
+    }
+
+    /* Activities section ends */
+
 }
 
-/* Large devices (desktops, 992px and up) */
+/* if screen size exceeds Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {  }
 
-/* Extra large devices (large desktops, 1200px and up) */
+/* if screen size exceeds Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {  }
