@@ -1,0 +1,61 @@
+:root {
+    --green: #78853f;
+    --yellow: #ffff00;
+    --white: #fefdfc;
+    --offset-white: #f7f7f7; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--green);
+}
+
+.hero .inner-hero {
+    /* justify-self: center;
+    align-self: center; */
+    margin-top: 8rem;
+    height: 40rem;
+    width: 85%;
+    background: url("./img/slider-bg.png");
+    background-size: cover;
+    box-shadow: -1px 1px 14px -3px #000000bf;
+    z-index: 1;
+}
+
+.hero .inner-hero .texts h2 {
+    color: var(--yellow);
+}
+
+.hero .inner-hero .texts div button{
+    background: var(--yellow);
+    border: none;
+}
+
+
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .hero .inner-hero {
+        margin-top: 6rem;
+        max-width: 80%;
+    }
+
+    .hero .inner-hero .texts{
+        max-width: 35rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {  }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
