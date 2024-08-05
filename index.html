@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/hero&activities.css">
     <link rel="stylesheet" href="./css/about.css">
     <link rel="stylesheet" href="./css/Contact.css" />
@@ -31,7 +32,30 @@
 
 </head>
 <body>
-    <!-- TODO: Insert navbar section here -->
+    <!-- Navigation Bar starts -->
+    <div id="navbar">
+        <!-- The School Logo starts -->
+        <a href="#Home" id="logopiece" onclick="setDefault()">
+            <div id="logo_image">
+                <img id="logo" src="./img/logo.jpg" alt="Global School Logo">
+            </div>
+            <div id="brand">
+                <h6>VP Social Education Foundation's</h6>
+                <h3>GLOBAL SCHOOL, PUNE</h3>
+                <h6><i>International Exposure with Indian Culture</i></h6>
+            </div>
+        </a>
+        <!-- The School Logo ends -->
+        <!-- All the links shown in the Navigation Bar are as follows -->
+        <div id="navlinks">
+            <a href="#Home" id="homePage" class="nav-item-active" onclick="myFunction(event)">HOME</a>
+            <a href="#Academics" class="nav-item" onclick="myFunction(event)">ACADEMICS</a>
+            <a href="#LifeAtGEMS" class="nav-item" onclick="myFunction(event)">LIFE AT GEMS</a>
+            <a href="#ApplyForm" class="apply">APPLY NOW</a>
+        </div>
+        <!-- The navigation links ends here -->
+    </div>
+    <!-- Navigation Bar ends -->
 
     <!-- Hero Section Starts -->
     <section class="d-flex 
@@ -588,6 +612,21 @@
     </section>
     <!-- footer section -->
 
+    <script>
+        function myFunction(event)
+        {
+            let text = event.target;
+            let x = document.getElementsByClassName("nav-item-active")[0];
+            x.className = "nav-item";
+            text.className = "nav-item-active";
+        }
+
+        function setDefault()
+        {
+            document.getElementsByClassName("nav-item-active")[0].className = "nav-item";
+            document.getElementById("homePage").className = "nav-item-active";
+        }
+    </script>
     <script src="script/hero&activities.js"></script>
 </body>
 </html>

@@ -1,0 +1,106 @@
+#navbar
+{
+    width: 100%;
+    background-color: #90953b;
+    top: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+#logopiece
+{
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    width: fit-content;
+    padding-left: auto;
+}
+
+h3, h6
+{
+    margin: 1px;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-item
+{
+    display: inline;
+    height: auto;
+    align-content: center;
+    text-align: center;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-item-active
+{
+    display: inline;
+    height: auto;
+    align-content: center;
+    text-align: center;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-decoration-line: underline;
+    text-underline-offset: 10px;
+    text-decoration-color: khaki;
+}
+
+.apply
+{
+    height: fit-content;
+    align-self: center;
+    padding: 10px;
+    border-radius: 20px;
+    border: double 1px maroon;
+    background-color:red;
+    font-weight: bolder;
+    color: white;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.apply:hover
+{
+    scale: 1.05;
+}
+
+.nav-item:hover
+{
+    background-color: #7c8034;
+}
+
+#logo
+{
+    height: 50px;
+    width: 50px;
+}
+
+#navlinks
+{
+    display: flex;
+    justify-content: end;
+    width: auto;
+    height: auto;
+    padding-right: 5px;
+}
+
+body
+{
+    margin: 0%;
+}
+
+#main
+{
+    margin-top: 5%;
+}
