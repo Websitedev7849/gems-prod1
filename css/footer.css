@@ -1,0 +1,139 @@
+  .layout_padding {
+    padding: 75px 0;
+  } 
+  
+  .info_section {
+    background-color: #252525;
+    color: #fefdfc;
+    font-family: "Lato", sans-serif;
+  }
+  
+  .info_section h5 {
+    margin: 20px 0 25px 0;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  
+  .info_section .form_heading {
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  
+  .info_section .info_logo a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    margin-bottom: 25px;
+  }
+  
+  .info_section .info_logo a span {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fefdfc;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .footer_section {
+    background-color: #252525;
+    padding: 20px;
+    background-color: #7a772d;
+  }
+  
+  .footer_section p {
+    margin: 0;
+    text-align: center;
+    color: #fefdfc;
+  }
+
+  .footer_section a {
+    color: #fefdfc;
+  }
+
+.info_logo{
+    padding-top: 30px;
+}
+
+.info_logo p{
+    font-size: 12px;
+    color: #7a772d;
+}
+
+.remove-hyp-color{
+  color: white;
+}
+
+
+
+
+.info_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.info_logo img.logo_image {
+  width: 50px;
+  height: auto;
+  margin-bottom: 20px;
+
+}
+
+.info_logo span {
+  font-size: 20px; 
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center; 
+}
+
+.info_section {
+  padding: 60px 0;
+}
+
+.info_section .container .row .col-md-3 {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+  .info_logo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info_logo img.logo_image {
+    margin-bottom: 10px;
+  }
+
+  .info_links,
+  .info_insta,
+  .info_account {
+    text-align: center;
+  }
+
+  .info_section .container .row .col-12 {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .info_section .container .row .col-md-3 {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .info_logo {
+    align-items: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .info_logo {
+    align-items: center;
+  }
+}

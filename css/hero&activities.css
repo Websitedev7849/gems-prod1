@@ -22,7 +22,7 @@
     margin-top: 8rem;
     height: 40rem;
     width: 85%;
-    background: url("./img/slider-bg.png");
+    background: url("../img/slider-bg.png");
     background-size: cover;
     box-shadow: -1px 1px 14px -3px #000000bf;
     z-index: 1;
@@ -42,6 +42,12 @@
 .activity .img-container {
     width: 18rem;
     height: 11rem;
+}
+
+#showMoreBtn, #showLessBtn {
+    background: var(--yellow);
+    border: 1px solid black;
+    /* box-shadow: 1px 3px 5px 0px #000000bf; */
 }
 
 /* Activities section ends */
