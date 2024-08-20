@@ -11,7 +11,7 @@
 }
 
 .hero {
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
     background-color: var(--green);
 }
@@ -19,7 +19,7 @@
 .hero .inner-hero {
     /* justify-self: center;
     align-self: center; */
-    margin-top: 8rem;
+    margin-top: 3rem;
     height: 40rem;
     width: 85%;
     background: url("../img/slider-bg.png");
