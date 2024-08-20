@@ -11,7 +11,7 @@
 }
 
 .hero {
-    height: 100vh;
+    height: 85vh;
     width: 100vw;
     background-color: var(--green);
 }
@@ -19,7 +19,7 @@
 .hero .inner-hero {
     /* justify-self: center;
     align-self: center; */
-    margin-top: 8rem;
+    margin-top: 2.5rem;
     height: 40rem;
     width: 85%;
     background: url("../img/slider-bg.png");
@@ -58,7 +58,7 @@
 /* if screen size exceeds Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
     .hero .inner-hero {
-        margin-top: 6rem;
+        /* margin-top: 3rem; */
         max-width: 80%;
     }
 
