@@ -1,0 +1,61 @@
+.carousel-inner
+{
+    padding-top: 10px;
+    background: #78853f;
+}
+
+.carousel-item
+{
+    padding: 40px;
+}
+
+/* Testimonials */
+.carousel-inner h1
+{
+    font-family: "Comfortaa", sans-serif;
+    color: snow;
+    width: fit-content;
+    margin: auto;
+}
+
+
+
+
+/* Review */
+.testimonial-container
+{
+    background-color: #90953b;
+    width: 60%;
+    border-radius: 20px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    text-wrap: wrap;
+}
+
+.testimonial-container img
+{
+    border-radius: 50px;
+}
+
+.person-name
+{
+    font-weight: bold;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+}
+
+.person-designation
+{
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.review
+{
+    font-family: "Patrick Hand", cursive;
+    font-weight: 400;
+    font-size: large;
+    font-style: normal;
+}
