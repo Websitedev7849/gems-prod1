@@ -10,8 +10,13 @@
     padding: 0;
 }
 
+body {
+    min-width: 300px;
+    overflow-x: scroll;
+}
+
 .hero {
-    height: 85vh;
+    height: 98vh;
     width: 100vw;
     background-color: var(--green);
 }
@@ -20,8 +25,9 @@
     /* justify-self: center;
     align-self: center; */
     margin-top: 2.5rem;
-    height: 40rem;
+    height: 43rem;
     width: 85%;
+    min-width: 300px;
     background: url("../img/slider-bg.png");
     background-size: cover;
     box-shadow: -1px 1px 14px -3px #000000bf;
@@ -53,13 +59,23 @@
 /* Activities section ends */
 
  /* if screen size exceeds Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {  }
+@media (min-width: 576px) { 
+    
+ }
 
 /* if screen size exceeds Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
+
+    .hero {
+        height: 85vh;
+    }
+
     .hero .inner-hero {
         /* margin-top: 3rem; */
         max-width: 80%;
+        
+        height: 38rem;
+        
     }
 
     .hero .inner-hero .texts{
