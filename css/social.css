@@ -1,0 +1,155 @@
+.social {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: #90973b;
+  height: 6rem;
+}
+
+.frame {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: auto;
+  width: 350px;
+  background-color: #90973b;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: -7px -7px 20px 0px #96ac30, -4px -4px 5px 0px #96ac30,
+    7px 7px 20px 0px #6a7a22, 4px 4px 5px 0px #6a7a22,
+    inset 0px 0px 0px 0px #96ac30, inset 0px 0px 0px 0px #6a7a22,
+    inset 0px 0px 0px 0px #96ac30, inset 0px 0px 0px 0px #6a7a22;
+}
+
+.btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 8px;
+  /* background: #c8d7ea; */
+  background: #ccd3dd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  /* box-shadow: -7px -7px 20px 0px #96ac30, -4px -4px 5px 0px #96ac30,
+    7px 7px 20px 0px #6a7a22, 4px 4px 5px 0px #6a7a22,
+    inset 0px 0px 0px 0px #96ac30, inset 0px 0px 0px 0px #6a7a22,
+    inset 0px 0px 0px 0px #96ac30, inset 0px 0px 0px 0px #6a7a22; */
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+      rgba(15, 1, 1, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+      rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+
+  transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
+  font-size: 16px;
+  color: rgba(42, 52, 84, 1);
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: -7px -7px 20px 0px #96ac30, -4px -4px 5px 0px #96ac30,
+    7px 7px 20px 0px #6a7a22, 4px 4px 5px 0px #6a7a22,
+    inset 0px 0px 0px 0px #96ac30, inset 0px 0px 0px 0px #6a7a22,
+    inset 0px 0px 0px 0px #96ac30, inset 0px 0px 0px 0px #6a7a22;
+
+    /* box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+      rgba(15, 1, 1, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+      rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px; */
+  }
+}
+
+.insta-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 20%;
+  background: radial-gradient(
+    circle at 33% 100%,
+    #fed373 4%,
+    #f15245 30%,
+    #d92e7f 62%,
+    #9b36b7 85%,
+    #515ecf
+  );
+}
+.insta-icon:after,
+.insta-icon:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #fff;
+  transform: translate(-50%, -50%);
+  content: "";
+}
+.insta-icon:before {
+  border-radius: 20%;
+}
+.insta-icon:after {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.btn:active {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+}
+
+@media (max-width: 767px) {
+  .frame {
+    width: 240px;
+    height: 50px;
+  }
+
+  .btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .insta-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .frame {
+    width: 280px;
+    height: 60px;
+  }
+
+  .btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .insta-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .social {
+    height: 7rem;
+  }
+  .frame {
+    width: 320px;
+    height: 80px;
+  }
+
+  .btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .insta-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
