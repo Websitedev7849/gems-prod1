@@ -55,6 +55,10 @@ body
     align-self: center;
 }
 
+.hamburger:hover {
+    cursor: pointer;
+}
+
 .hamburger a {
     color: snow;
 }
