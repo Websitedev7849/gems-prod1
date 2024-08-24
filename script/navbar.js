@@ -2,8 +2,6 @@ const hamburgerDiv = document.querySelector(".hamburger")
 const navbar = document.querySelector(".navbar")
 const navlinks = document.querySelectorAll(".navlinks a")
 
-navlinks.push( document.querySelector("#enquiry") )
-
 hamburgerDiv.addEventListener("click", e => {
     navbar.classList.toggle("navbar-opened")
 })
