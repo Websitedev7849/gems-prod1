@@ -6,8 +6,8 @@ body
 
 .brand .logo img:nth-child(1)
 {
-    height: 3rem;
-    width: 8rem;
+    height: 4rem;
+    width: 6rem;
 }
 
 .navbar
@@ -15,7 +15,7 @@ body
     position: sticky;
     top: 0;
     width: 100vw;
-    height: 73px;
+    height: 76px;
     background-color: chocolate;
     display: flex;
     justify-content: space-between;
@@ -44,9 +44,9 @@ body
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin: 5px auto;
+    margin: auto auto;
     padding-right: 1rem;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
 }
 
 
@@ -115,7 +115,7 @@ body
     .navbar
     {
         flex-direction: row;
-        height: 70px;
+        height: 74px;
     }
 
     .nav-item
