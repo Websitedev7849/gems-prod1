@@ -18,11 +18,11 @@
   },
   "homepage": "https://github.com/Websitedev7849/GEMS-prod1#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "nodemailer": "^6.9.15"
   },
   "devDependencies": {
-    "dotenv": "^16.4.5",
     "nodemon": "^3.1.4"
   }
 }
