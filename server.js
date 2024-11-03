@@ -3,7 +3,8 @@ const { sendEmail } = require("./mailHandler")
 const fileUpload = require('express-fileupload');
 const path = require('path');
 
-const express = require('express')
+const express = require('express');
+const { writeFile, writeFileSync } = require("fs");
 
 const app = express()
 
@@ -27,29 +28,62 @@ app.get("/user/cms", (req, res)=> {
 })
 
 
-app.post("/user/cms", (req, res)=> {
+app.post("/user/cms", async (req, res)=> {
     
+    // wrapper function to create a promise
+    const mvFile = (file, path) => {
+        return new Promise((resolve, reject) => {
+          file.mv(path, (err) => {
+            if (err) {
+              return reject(err);
+            }
+            resolve();
+          });
+        });
+    };
+      
     
     if (!req.files || Object.keys(req.files).length === 0) {
         return res.status(400).send('No files were uploaded.');
     }
 
     // The name of the input field (i.e. "myFile") is used to retrieve the uploaded file
-    let uploadedFile = req.files.logo_square;
+    let uploadedFiles = req.files;
+
+    console.log(req.files);
+    // res.send(req.body)
 
     // Define the upload path
-    const uploadPath = path.join(__dirname, '/public/img/', "logo-square.png");
+    let uploadPath = null
 
-    // Use the mv() method to place the file somewhere on your server
-    uploadedFile.mv(uploadPath, function(err) {
-        if (err) {
-            return res.status(500).send(err);
+    for (const key of Object.keys(uploadedFiles)) {
+        if (key === "logo_square") {
+            uploadPath = path.join(__dirname, '/public/img/', "logo-square.png");
+            await mvFile(uploadedFiles[key], uploadPath)
         }
-        console.log(req.body);
+        else if (key === "prePrimaryCardImage") {
+            let prePrimaryCardImageFiles = uploadedFiles[key]
+            for (let i = 0; i < prePrimaryCardImageFiles.length; i++) {
+                const file = prePrimaryCardImageFiles[i];
+                uploadPath = path.join(__dirname, '/public/img/activities/', `prePrimaryActivityImage${i+1}.png`);
+                await mvFile(file, uploadPath)
+            }
+        }
+        else if (key === "primaryCardImage") {
+            let primaryCardImageFiles = uploadedFiles[key]
+            for (let i = 0; i < primaryCardImageFiles.length; i++) {
+                const file = primaryCardImageFiles[i];
+                uploadPath = path.join(__dirname, '/public/img/activities/', `primaryActivityImage${i+1}.png`);
+                await mvFile(file, uploadPath)
+            }
+        }
+    }
+
+    // write form data to content.json file
+    writeFileSync(`${__dirname}/content/content.json`, JSON.stringify(req.body))
         
-        res.send(`File uploaded to ${uploadPath}`);
-        // res.redirect("/user/cms")
-    });
+    res.send(`<h1>Success: Changes made successfully </h1>`);
+    
     
 })
 

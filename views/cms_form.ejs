@@ -24,48 +24,77 @@
             </div>
             <div class="mb-4">
                 <label for="navlinks" class="form-label">Navlinks (comma separated)</label>
-                <input type="text" class="form-control" name="navlinks" id="navlinks" placeholder="Home, About, Services, Contact">
+                <input type="text" class="form-control" name="navlinks" id="navLinks" placeholder="Home, About, Services, Contact">
             </div>
-    
+
+            <hr class="mt-1 mb-1"/>
+            
             <!-- Hero Section -->
             <h2>Hero Section</h2>
             <div class="mb-4">
                 <label for="heroTitle" class="form-label">Title of Hero Section</label>
-                <input type="text" class="form-control" id="heroTitle">
+                <input type="text" class="form-control" id="heroTitle" name="heroTitle">
             </div>
             <div class="mb-4">
                 <label for="heroSubTitle" class="form-label">Sub Title of Hero Section</label>
-                <input type="text" class="form-control" id="heroSubTitle">
+                <input type="text" class="form-control" id="heroSubTitle" name="heroSubTitle">
             </div>
             <div class="mb-4">
                 <label for="heroParagraph" class="form-label">Paragraph Related to Hero Section</label>
-                <textarea class="form-control" id="heroParagraph" rows="3"></textarea>
+                <textarea class="form-control" id="heroParagraph" name="heroParagraph" rows="3"></textarea>
             </div>
 
             <div class="mb-4">
                 <label for="slider_bg" class="form-label">Slider Background</label>
-                <input type="file" class="form-control" id="slider_bg" name="slider_bg" accept="image/*">
+                <input type="file" class="form-control" id="slider_bg" name="sliderBg" accept="image/*">
             </div>
 
             <div class="mb-4">
                 <label for="heroButtonLink" class="form-label">Link Button URL</label>
-                <input type="url" class="form-control" id="heroButtonLink" placeholder="https://example.com">
+                <input type="url" class="form-control" id="heroButtonLink" name="heroButtonLink" placeholder="https://example.com">
             </div>
     
+            <hr class="mt-1 mb-1"/>
+            
             <!-- Activities Section -->
             <h2>Activities Section</h2>
     
             <!-- Pre-Primary Activities -->
             <h3>Pre-Primary Activities</h3>
             <div id="prePrimaryCards" class="mb-4"></div>
-            <button class="btn btn-secondary mb-4" id="addPrePrimaryCard">Add Pre-Primary Card</button>
+            <button class="btn btn-secondary mb-4" id="addPrePrimaryCard" type="button">Add Pre-Primary Card</button>
     
             <!-- Primary Activities -->
             <h3>Primary Activities</h3>
             <div id="primaryCards" class="mb-4"></div>
-            <button class="btn btn-secondary mb-4" id="addPrimaryCard">Add Primary Card</button>
+            <button class="btn btn-secondary mb-4" id="addPrimaryCard" type="button">Add Primary Card</button>
     
             <button type="submit" class="btn btn-primary">Submit</button>
+
+            
+            <hr class="mt-1 mb-1"/>
+            
+            <!-- About Us -->
+            <h2>About Us Section</h2>
+            <div class="mb-4">
+                <label for="aboutUsTitle" class="form-label">Title</label>
+                <input type="text" class="form-control" id="aboutUsTitle" name="aboutUsTitle" placeholder="Enter title">
+            </div>
+            <div class="mb-4">
+                <label for="aboutUsSubtitle" class="form-label">Subtitle</label>
+                <input type="text" class="form-control" id="aboutUsSubtitle" name="aboutUsSubtitle" placeholder="Enter subtitle">
+            </div>
+            <div class="mb-4">
+                <label for="aboutUsParagraph" class="form-label">Paragraph</label>
+                <textarea class="form-control" id="aboutUsParagraph" name="aboutUsParagraph" rows="4" placeholder="Write about us..."></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="aboutUsImage" class="form-label">Image</label>
+                <input type="file" class="form-control" id="aboutUsImage" name="aboutUsImage" accept="image/*">
+            </div>
+
+            <!-- TODO -->
+            <!-- Our Philosophy -->
         </form>
         
     </div>
@@ -134,14 +163,15 @@
     const addPrePrimaryCard = document.getElementById('addPrePrimaryCard');
     const prePrimaryCards = document.getElementById('prePrimaryCards');
 
-    addPrePrimaryCard.addEventListener('click', () => {
+    addPrePrimaryCard.addEventListener('click', e => {
+        e.preventDefault()
         const cardHTML = `
             <div class="card">
                 <div class="card-body">
                     <label class="form-label">Image Upload for Pre-Primary Activity</label>
-                    <input type="file" class="form-control mb-2" accept="image/*">
+                    <input type="file" class="form-control mb-2" name='prePrimaryCardImage' accept="image/*">
                     <label class="form-label">Title for Pre-Primary Activity</label>
-                    <input type="text" class="form-control" placeholder="Activity Title">
+                    <input type="text" class="form-control" name='prePrimaryCardTitle' placeholder="Activity Title">
                 </div>
             </div>`;
         prePrimaryCards.insertAdjacentHTML('beforeend', cardHTML);
@@ -150,14 +180,15 @@
     const addPrimaryCard = document.getElementById('addPrimaryCard');
     const primaryCards = document.getElementById('primaryCards');
 
-    addPrimaryCard.addEventListener('click', () => {
+    addPrimaryCard.addEventListener('click', e => {
+        e.preventDefault()
         const cardHTML = `
             <div class="card">
                 <div class="card-body">
                     <label class="form-label">Image Upload for Primary Activity</label>
-                    <input type="file" class="form-control mb-2" accept="image/*">
+                    <input type="file" class="form-control mb-2" name='primaryCardImage'accept="image/*">
                     <label class="form-label">Title for Primary Activity</label>
-                    <input type="text" class="form-control" placeholder="Activity Title">
+                    <input type="text" class="form-control" name='primaryCardImage' placeholder="Activity Title">
                 </div>
             </div>`;
         primaryCards.insertAdjacentHTML('beforeend', cardHTML);
