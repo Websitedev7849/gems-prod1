@@ -69,7 +69,6 @@
             <div id="primaryCards" class="mb-4"></div>
             <button class="btn btn-secondary mb-4" id="addPrimaryCard" type="button">Add Primary Card</button>
     
-            <button type="submit" class="btn btn-primary">Submit</button>
 
             
             <hr class="mt-1 mb-1"/>
@@ -93,76 +92,41 @@
                 <input type="file" class="form-control" id="aboutUsImage" name="aboutUsImage" accept="image/*">
             </div>
 
-            <!-- TODO -->
             <!-- Our Philosophy -->
+            <!-- Our Philosophy Section -->
+            <h2>Our Philosophy Section</h2>
+            <div class="mb-4">
+                <label for="philosophyImage" class="form-label">Philosophy Image</label>
+                <input type="file" class="form-control" id="philosophyImage" name="philosophyImage" accept="image/*">
+            </div>
+            <div class="mb-4">
+                <label for="philosophyTitle" class="form-label">Title of Philosophy Section</label>
+                <input type="text" class="form-control" id="philosophyTitle" name="philosophyTitle" placeholder="Enter title">
+            </div>
+            <div class="mb-4">
+                <label for="philosophySubtitle" class="form-label">Subtitle of Philosophy Section</label>
+                <input type="text" class="form-control" id="philosophySubtitle" name="philosophySubtitle" placeholder="Enter subtitle">
+            </div>
+            <div class="mb-4">
+                <label for="philosophyLink" class="form-label">Link Button URL</label>
+                <input type="url" class="form-control" id="philosophyLink" name="philosophyLink" placeholder="https://example.com">
+            </div>
+            <div class="mb-4">
+                <label for="philosophyParagraph" class="form-label">Philosophy Paragraph</label>
+                <textarea class="form-control" id="philosophyParagraph" name="philosophyParagraph" rows="4" placeholder="Describe our philosophy..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
         </form>
         
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-
-    /*
-    const form = document.querySelector("form")
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const formData = {
-        logo: document.getElementById('logo').files[0] ? document.getElementById('logo').files[0] : null,
-        navlinks: document.getElementById('navlinks').value.split(',').map(link => link.trim()),
-        heroTitle: document.getElementById('heroTitle').value,
-        heroSubTitle: document.getElementById('heroSubTitle').value,
-        heroParagraph: document.getElementById('heroParagraph').value,
-        heroButtonLink: document.getElementById('heroButtonLink').value,
-        prePrimaryActivities: [],
-        primaryActivities: []
-        };
-
-        // Collect Pre-Primary Activities
-        const prePrimaryCards = document.querySelectorAll('#prePrimaryCards .card');
-        prePrimaryCards.forEach(card => {
-            const activityTitle = card.querySelector('input[type="text"]').value;
-            const activityImage = card.querySelector('input[type="file"]').files[0] ? card.querySelector('input[type="file"]').files[0].name : null;
-
-            formData.prePrimaryActivities.push({
-                title: activityTitle,
-                image: activityImage
-            });
-        });
-
-        // Collect Primary Activities
-        const primaryCards = document.querySelectorAll('#primaryCards .card');
-        primaryCards.forEach(card => {
-            const activityTitle = card.querySelector('input[type="text"]').value;
-            const activityImage = card.querySelector('input[type="file"]').files[0] ? card.querySelector('input[type="file"]').files[0].name : null;
-
-            formData.primaryActivities.push({
-                title: activityTitle,
-                image: activityImage
-            });
-        });
-
-
-        fetch('/user/cms', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
-        })
-        .catch((error) => {
-            console.log(formData);
-            
-            console.error('Error:', error);
-            // Optionally handle error (e.g., display an error message)
-        });
-
-        console.log(formData); // Output the JSON object
-    })
-    */
     
     const addPrePrimaryCard = document.getElementById('addPrePrimaryCard');
     const prePrimaryCards = document.getElementById('prePrimaryCards');
-
     addPrePrimaryCard.addEventListener('click', e => {
         e.preventDefault()
         const cardHTML = `
@@ -177,9 +141,9 @@
         prePrimaryCards.insertAdjacentHTML('beforeend', cardHTML);
     });
 
+
     const addPrimaryCard = document.getElementById('addPrimaryCard');
     const primaryCards = document.getElementById('primaryCards');
-
     addPrimaryCard.addEventListener('click', e => {
         e.preventDefault()
         const cardHTML = `
