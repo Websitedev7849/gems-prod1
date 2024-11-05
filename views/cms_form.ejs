@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,17 +117,60 @@
                 <textarea class="form-control" id="philosophyParagraph" name="philosophyParagraph" rows="4" placeholder="Describe our philosophy..."></textarea>
             </div>
 
+            <!-- Testimonial Section -->
+            <hr>
+            <h2>Testimonials Section</h2>
+            <div id="testimonialCards" class="mb-4"></div>
+            <button class="btn btn-secondary mb-4" id="addTestimonialCard" type="button">Add Testimonial</button>
+            
+            <!-- Google Map Embed Link -->
+            <hr>
+            <h2>Google Map Section</h2>
+            <div class="mb-4">
+                <label for="googleMapUrl" class="form-label">Google Map Embed URL</label>
+                <input type="url" class="form-control mb-2" id="googleMapUrl" placeholder="Paste the Google Map Embed URL here">
+            </div>
+            
+            <!-- Contact Information Updates -->
+            <hr>
+            <h2>Contact Information</h2>
+            
+            <div class="mb-4">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" required>
+            </div>
+            
+            <div class="mb-4">
+                <label for="emailId" class="form-label">Email ID</label>
+                <input type="email" class="form-control" id="emailId" name="emailId" placeholder="Enter email ID" required>
+            </div>
+            
+            <div class="mb-4">
+                <label for="facebookLink" class="form-label">Facebook Link</label>
+                <input type="url" class="form-control" id="facebookLink" name="facebookLink" placeholder="Enter Facebook profile link">
+            </div>
+            
+            <div class="mb-4">
+                <label for="instagramLink" class="form-label">Instagram Link</label>
+                <input type="url" class="form-control" id="instagramLink" name="instagramLink" placeholder="Enter Instagram profile link">
+            </div>
+            
+            <!-- Branches Section -->
+            <h3>Branches</h3>
+            <div id="branchContainer" class="mb-4"></div>
+            <button class="btn btn-secondary mb-4" id="addBranchButton" type="button">Add Branch</button>
+            <hr>
+            
             <button type="submit" class="btn btn-primary">Submit</button>
-
         </form>
-        
     </div>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
     
     const addPrePrimaryCard = document.getElementById('addPrePrimaryCard');
     const prePrimaryCards = document.getElementById('prePrimaryCards');
+
     addPrePrimaryCard.addEventListener('click', e => {
         e.preventDefault()
         const cardHTML = `
@@ -141,9 +185,9 @@
         prePrimaryCards.insertAdjacentHTML('beforeend', cardHTML);
     });
 
-
     const addPrimaryCard = document.getElementById('addPrimaryCard');
     const primaryCards = document.getElementById('primaryCards');
+
     addPrimaryCard.addEventListener('click', e => {
         e.preventDefault()
         const cardHTML = `
@@ -156,6 +200,57 @@
                 </div>
             </div>`;
         primaryCards.insertAdjacentHTML('beforeend', cardHTML);
+    });
+
+    // Code to add testimonial card
+    const addTestimonialCard = document.getElementById('addTestimonialCard');
+    const testimonialCards = document.getElementById('testimonialCards');
+    let testimonialCount = 0;
+
+    addTestimonialCard.addEventListener('click', e => {
+        e.preventDefault();
+        testimonialCount++;
+
+        const cardHTML = `
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3>Testimonial ${testimonialCount}</h3>
+                    <label class="form-label">Profile Picture</label>
+                    <input type="file" class="form-control mb-2" name="testimonialProfilePic" accept="image/*" required>
+                    
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control mb-2" name="testimonialName" placeholder="Enter name" required>
+                    
+                    <label class="form-label">Designation</label>
+                    <input type="text" class="form-control mb-2" name="testimonialDesignation" placeholder="Enter designation" required>
+                    
+                    <label class="form-label">Testimonial</label>
+                    <textarea class="form-control" name="testimonialParagraph" rows="4" placeholder="Write the testimonial..." required></textarea>
+                </div>
+            </div>`;
+        
+        testimonialCards.insertAdjacentHTML('beforeend', cardHTML);
+    });
+
+    // Code to dynamically add branches
+    const addBranchButton = document.getElementById('addBranchButton');
+    const branchContainer = document.getElementById('branchContainer');
+    let branchCount = 0;
+
+    addBranchButton.addEventListener('click', e => {
+        e.preventDefault();
+        branchCount++;
+
+        const branchHTML = `
+            <div class="branch card mb-4">
+                <div class="card-body">
+                    <h4>Branch ${branchCount}</h4>
+                    <label class="form-label">Branch Address</label>
+                    <textarea class="form-control mb-2" name="branchAddress[]" rows="3" placeholder="Enter branch address" required></textarea>
+                </div>
+            </div>`;
+
+        branchContainer.insertAdjacentHTML('beforeend', branchHTML);
     });
     </script>
 </body>
