@@ -1,6 +1,6 @@
 {
-    "navLinks": "Home, About",
-    "heroTitle": "Title",
+    "navlinks": "Home, About",
+    "heroTitle": "",
     "heroSubTitle": "",
     "heroParagraph": "",
     "heroButtonLink": "",
@@ -19,9 +19,18 @@
     "philosophySubtitle": "",
     "philosophyLink": "",
     "philosophyParagraph": "",
-    "testimonialName": "SIDDHARTH CHANDRAKANT PAWAR",
-    "testimonialDesignation": "Designation",
-    "testimonialParagraph": "Paragraph",
+    "testimonialName": [
+        "SIDDHARTH CHANDRAKANT PAWAR",
+        "SIDDHARTH CHANDRAKANT PAWAR"
+    ],
+    "testimonialDesignation": [
+        "Designation",
+        "Designation"
+    ],
+    "testimonialParagraph": [
+        "Testimonial",
+        "Testimonial"
+    ],
     "googleMapUrl": "",
     "phoneNumber": "",
     "emailId": "",
