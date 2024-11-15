@@ -62,6 +62,10 @@ app.post("/user/cms", async (req, res)=> {
                 uploadPath = path.join(__dirname, '/public/img/', "logo-square.png");
                 await mvFile(uploadedFiles[key], uploadPath)
             }
+            else if (key === "sliderBg") {
+                uploadPath = path.join(__dirname, '/public/img/', "slider-bg.png");
+                await mvFile(uploadedFiles[key], uploadPath)
+            }
             else if (key === "prePrimaryCardImage") {
                 let prePrimaryCardImageFiles = uploadedFiles[key]
                 for (let i = 0; i < prePrimaryCardImageFiles.length; i++) {
@@ -75,6 +79,22 @@ app.post("/user/cms", async (req, res)=> {
                 for (let i = 0; i < primaryCardImageFiles.length; i++) {
                     const file = primaryCardImageFiles[i];
                     uploadPath = path.join(__dirname, '/public/img/activities/', `primaryActivityImage${i+1}.png`);
+                    await mvFile(file, uploadPath)
+                }
+            }
+            else if (key === "aboutUsImage") {
+                uploadPath = path.join(__dirname, '/public/img/', "about-img.jpg");
+                await mvFile(uploadedFiles[key], uploadPath)
+            }
+            else if (key === "philosophyImage") {
+                uploadPath = path.join(__dirname, '/public/img/', "inspiration.png");
+                await mvFile(uploadedFiles[key], uploadPath)
+            }
+            else if (key === "testimonialProfilePic") {
+                let testimonialProfilePic = uploadedFiles[key]
+                for (let i = 0; i < testimonialProfilePic.length; i++) {
+                    const file = testimonialProfilePic[i];
+                    uploadPath = path.join(__dirname, '/public/img/testimonials/', `testimonialProfilePic${i+1}.png`);
                     await mvFile(file, uploadPath)
                 }
             }
