@@ -3,6 +3,8 @@ const { sendEmail } = require("./mailHandler")
 const fileUpload = require('express-fileupload');
 const path = require('path');
 
+const fileHandler = require("./utils/fileHandlers")
+
 const express = require('express');
 const { writeFile, writeFileSync, readFileSync } = require("fs");
 
@@ -36,18 +38,7 @@ app.post("/user/cms", async (req, res)=> {
 
     // Save files If any
     if (req.files && Object.keys(req.files).length > 0) {
-        // wrapper function to create a promise
-        const mvFile = (file, path) => {
-            return new Promise((resolve, reject) => {
-            file.mv(path, (err) => {
-                if (err) {
-                return reject(err);
-                }
-                resolve();
-            });
-            });
-        };
-
+        
         // The name of the input field (i.e. "myFile") is used to retrieve the uploaded file
         let uploadedFiles = req.files;
 
@@ -60,42 +51,48 @@ app.post("/user/cms", async (req, res)=> {
         for (const key of Object.keys(uploadedFiles)) {
             if (key === "logo_square") {
                 uploadPath = path.join(__dirname, '/public/img/', "logo-square.png");
-                await mvFile(uploadedFiles[key], uploadPath)
+                await fileHandler.mvFile(uploadedFiles[key], uploadPath)
             }
             else if (key === "sliderBg") {
                 uploadPath = path.join(__dirname, '/public/img/', "slider-bg.png");
-                await mvFile(uploadedFiles[key], uploadPath)
+                await fileHandler.mvFile(uploadedFiles[key], uploadPath)
             }
             else if (key === "prePrimaryCardImage") {
+                await fileHandler.deleteFilesInDirectory(__dirname + "/public/img/activities/")
+
                 let prePrimaryCardImageFiles = uploadedFiles[key]
                 for (let i = 0; i < prePrimaryCardImageFiles.length; i++) {
                     const file = prePrimaryCardImageFiles[i];
                     uploadPath = path.join(__dirname, '/public/img/activities/', `prePrimaryActivityImage${i+1}.png`);
-                    await mvFile(file, uploadPath)
+                    await fileHandler.mvFile(file, uploadPath)
                 }
             }
             else if (key === "primaryCardImage") {
+                await fileHandler.deleteFilesInDirectory(__dirname + "/public/img/activities/")
+
                 let primaryCardImageFiles = uploadedFiles[key]
                 for (let i = 0; i < primaryCardImageFiles.length; i++) {
                     const file = primaryCardImageFiles[i];
                     uploadPath = path.join(__dirname, '/public/img/activities/', `primaryActivityImage${i+1}.png`);
-                    await mvFile(file, uploadPath)
+                    await fileHandler.mvFile(file, uploadPath)
                 }
             }
             else if (key === "aboutUsImage") {
                 uploadPath = path.join(__dirname, '/public/img/', "about-img.jpg");
-                await mvFile(uploadedFiles[key], uploadPath)
+                await fileHandler.mvFile(uploadedFiles[key], uploadPath)
             }
             else if (key === "philosophyImage") {
                 uploadPath = path.join(__dirname, '/public/img/', "inspiration.png");
-                await mvFile(uploadedFiles[key], uploadPath)
+                await fileHandler.mvFile(uploadedFiles[key], uploadPath)
             }
             else if (key === "testimonialProfilePic") {
+                await fileHandler.deleteFilesInDirectory(__dirname + "/public/img/testimonials/")
+
                 let testimonialProfilePic = uploadedFiles[key]
                 for (let i = 0; i < testimonialProfilePic.length; i++) {
                     const file = testimonialProfilePic[i];
                     uploadPath = path.join(__dirname, '/public/img/testimonials/', `testimonialProfilePic${i+1}.png`);
-                    await mvFile(file, uploadPath)
+                    await fileHandler.mvFile(file, uploadPath)
                 }
             }
         }
