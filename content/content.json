@@ -1,5 +1,5 @@
 {
-    "navLinks": "Home, About",
+    "navLinks": "Home[#home], About Us[#about-us], Our Philosophy[#our-philosophy]",
     "heroTitle": "Title",
     "heroSubTitle": "",
     "heroParagraph": "",

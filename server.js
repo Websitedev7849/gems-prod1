@@ -27,7 +27,7 @@ app.use(fileUpload())
 app.get("/", function (req, res) {
     const contentJsonString = readFileSync(__dirname + "/content/content.json")
     const contentJson = JSON.parse(contentJsonString)
-    res.render("index.ejs")
+    res.render("index.ejs", {contentJson})
 })
 
 app.get("/user/cms", (req, res)=> {

@@ -12,9 +12,13 @@
         </div>
     </div>
     <div class="navlinks">
-        <a href="#hero" class="nav-item">HOME</a>
-        <a href="#about-container" class="nav-item">ABOUT US</a>
-        <a href="#philosophy" class="nav-item">OUR PHILOSOPHY</a>
+        <% let individualNavLinks = navLinks.split(',') %>
+        <% for (let i = 0; i < individualNavLinks.length; i++) { %>
+                <% const [name, link] =  individualNavLinks[i].split('[') %>
+                <a href="<%= link.replace(']', '') %>" class="nav-item"><%= name %></a>
+        <% } %>
+        <!-- <a href="#about-container" class="nav-item">ABOUT US</a> -->
+        <!-- <a href="#philosophy" class="nav-item">OUR PHILOSOPHY</a> -->
     </div>
     <a href="#contact-info" class="apply">CONTACT US</a>
 </section>
