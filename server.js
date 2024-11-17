@@ -61,22 +61,22 @@ app.post("/user/cms", async (req, res)=> {
                 await fileHandler.mvFile(uploadedFiles[key], uploadPath)
             }
             else if (key === "prePrimaryCardImage") {
-                await fileHandler.deleteFilesInDirectory(__dirname + "/public/img/activities/")
+                await fileHandler.deleteFilesInDirectory(__dirname + "/public/img/activities/prePrimaryActivityImages")
 
                 let prePrimaryCardImageFiles = uploadedFiles[key]
                 for (let i = 0; i < prePrimaryCardImageFiles.length; i++) {
                     const file = prePrimaryCardImageFiles[i];
-                    uploadPath = path.join(__dirname, '/public/img/activities/', `prePrimaryActivityImage${i+1}.png`);
+                    uploadPath = path.join(__dirname, '/public/img/activities/prePrimaryActivityImages', `prePrimaryActivityImage${i+1}.png`);
                     await fileHandler.mvFile(file, uploadPath)
                 }
             }
             else if (key === "primaryCardImage") {
-                await fileHandler.deleteFilesInDirectory(__dirname + "/public/img/activities/")
+                await fileHandler.deleteFilesInDirectory(__dirname + "/public/img/activities/primaryActivityImages")
 
                 let primaryCardImageFiles = uploadedFiles[key]
                 for (let i = 0; i < primaryCardImageFiles.length; i++) {
                     const file = primaryCardImageFiles[i];
-                    uploadPath = path.join(__dirname, '/public/img/activities/', `primaryActivityImage${i+1}.png`);
+                    uploadPath = path.join(__dirname, '/public/img/activities/primaryActivityImages', `primaryActivityImage${i+1}.png`);
                     await fileHandler.mvFile(file, uploadPath)
                 }
             }

@@ -5,12 +5,23 @@
     "heroParagraph": "At GEMS, we firmly hold the belief that education should holistically nurture and harmonize every facet of an individual's being. Central to this vision is the vital objective of fostering moral and character development in every student. Our aim is to guide each child towards realizing their innate godliness, enabling them to evolve into extraordinary individuals. Moreover, we recognize the significance of cultivating each child's unique abilities and areas of interest, ensuring their growth aligns with their true potential. At GEMS, we are dedicated to empowering students to become divine human beings who embrace their individuality and make a positive impact on the world around them.",
     "heroButtonLink": "Contact Us[#contact-us]",
     "prePrimaryCardTitle": [
-        "Title for Pre-Primary Activity",
-        "Title for Pre-Primary Activity"
+        "Regular Yoga",
+        "Camp Fire",
+        "Cultural Activities",
+        "Color Day Celebrations",
+        "Motor Skill Activities",
+        "Loving and Caring Teacher",
+        "E-Learning"
     ],
-    "primaryCardImage": [
-        "Title for Primary Activity",
-        "Title for Primary Activity"
+    "primaryCardTitle": [
+        "Immersing into the Nature",
+        "Indoor Games",
+        "Nature is the Best Classroom!",
+        "Visit to Historical Places",
+        " Educational Tours - Visit to Global 20 Summit",
+        "Adventurous Activities",
+        "Sowing Seeds of Nature Conservation Thoughts",
+        "Science Experiments"
     ],
     "aboutUsTitle": "",
     "aboutUsSubtitle": "",
@@ -30,5 +41,15 @@
     "branchAddress": [
         "Branch Address",
         "Branch Address"
+    ],
+    "primaryCardImage": [
+        "Immersing into the Nature",
+        "Indoor Games",
+        "Nature is the Best Classroom!",
+        "Visit to Historical Places",
+        " Educational Tours - Visit to Global 20 Summit",
+        "Adventurous Activities",
+        "Sowing Seeds of Nature Conservation Thoughts",
+        "Science Experiments"
     ]
 }

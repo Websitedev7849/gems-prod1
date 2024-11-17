@@ -12,86 +12,18 @@
           <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
             <div class="accordion-body">
                 <div class="row">
+                    <% for (let i = 0; i < prePrimaryCardTitle.length; i++) { %>
                     <div class="col-lg-6 activity my-3">
                         <div class="d-flex justify-content-around align-items-between">
                             <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image2.png">
+                                <img class="w-100 h-100" src="./img/activities/prePrimaryActivityImages/<%= `prePrimaryActivityImage${i+1}` %>.png">
                             </div>
                             <div class="texts ms-3 w-75 pt-5">
-                                <h5>Regular Yoga</h5>
+                                <h5><%= prePrimaryCardTitle[i] %></h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image4.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>Camp Fire</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image5.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>Cultural Activities</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image6.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>Color Day Celebrations</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image7.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>Motor Skills Activities</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image8.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>Loving and Caring Teacher</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 activity my-3 hidden-activity d-none">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image16.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>Gandhi Jayanti Celebration</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image10.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>E-Learning</h5>
-                            </div>
-                        </div>
-                    </div>
+                    <% } %>
                 </div>
             </div>
           </div>
@@ -105,86 +37,18 @@
           <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
             <div class="accordion-body">
                 <div class="row">
+                    <% for (let i = 0; i < primaryCardTitle.length; i++) { %>
                     <div class="col-lg-6 activity my-3">
                         <div class="d-flex justify-content-around align-items-between">
                             <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image12.png">
+                                <img class="w-100 h-100" src="./img/activities/primaryActivityImages/<%= `primaryActivityImage${i+1}` %>.png">
                             </div>
                             <div class="texts ms-3 w-75 pt-5">
-                                <h5>Immersing into the Nature</h5>
+                                <h5><%= primaryCardTitle[i] %></h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image1.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>Indoor Games</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image3.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>Nature is the best classroom!</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image9.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>Visit to Historical Places</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image11.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>Educational Tours - Visit to Global 20 Summit</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image13.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>Adventurous Activities</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image14.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>Sowing Seeds of Nature Conservation Thoughts</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/image15.png">
-                            </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5>Science Experiments</h5>
-                            </div>
-                        </div>
-                    </div>
+                    <% } %>
                 </div>
             </div>
         </div>
