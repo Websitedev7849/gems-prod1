@@ -10,18 +10,17 @@
         <div class="detail-box">
             <div class="heading_container">
             <h2>
-                The GEMS Philosophy
+                <%= philosophyTitle %>
             </h2>
             </div>
             <p>
-            <center>"We want education by which character is formed, strength of mind is increased, the intellect is expanded and by which one can stand on one's own feet."
-                - SWAMI VIVEKANANDA
-                </center>
-
+            <center> <%= philosophySubtitle %> </center>
             </p>
             <div class="d-flex justify-content-center">
-            <a class="readmore" href="">
-                Read More
+            
+            <% const [name, link] = philosophyLink.split('[') %>
+            <a class="readmore" href="<%= link.replace(']', '') %>">
+                <%= name %>
             </a>
             </div>
 
@@ -30,7 +29,7 @@
     </div>
     <div class="row mx-5">
         <p class="mt-sm-4 fs-5">
-        At GEMS we believe in the profound philosophy of Swami Vivekananda. Backed by substantial expertise in the education field, our leadership has crafted a philosophy, that has yielded remarkable results throughout the years. Our distinctive teaching approach fosters an atmosphere of appreciation, empowerment, and respect, ensuring that each student feels capable and valued. Through the collaborative environment, we strive to create an interactive educational experience for every student.
+            <%= philosophyParagraph %>
         </p>
     </div>
     </div>
