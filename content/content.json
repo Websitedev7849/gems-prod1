@@ -30,9 +30,33 @@
     "philosophySubtitle": "\"We want education by which character is formed, strength of mind is increased, the intellect is expanded and by which one can stand on one's own feet.\" - SWAMI VIVEKANANDA",
     "philosophyLink": "Read More[#our-philosophy]",
     "philosophyParagraph": "At GEMS we believe in the profound philosophy of Swami Vivekananda. Backed by substantial expertise in the education field, our leadership has crafted a philosophy, that has yielded remarkable results throughout the years. Our distinctive teaching approach fosters an atmosphere of appreciation, empowerment, and respect, ensuring that each student feels capable and valued. Through the collaborative environment, we strive to create an interactive educational experience for every student.",
-    "testimonialName": "SIDDHARTH CHANDRAKANT PAWAR",
-    "testimonialDesignation": "Designation",
-    "testimonialParagraph": "Paragraph",
+    "testimonialName": [
+        "Dr. Pramod Kadam",
+        "Prof. Sunil Khot",
+        "Mr. Abhishekh Gorpade",
+        "Prof. Sunil Khot",
+        "Mrs. Vidya Ransing",
+        "Mr. Pravin Mane",
+        "Arnav Hulawale"
+    ],
+    "testimonialDesignation": [
+        "Sr. Software Engg. Parent of 6th Grade student",
+        "PICT College, Pune. Parent of a 1st and an 8th grade student",
+        "Sr. Software Developer. Parent of a Grade 5 Student",
+        "PICT College, Pune. Parents of a Grade 8 Student",
+        "Parent of a Grade 6 Student",
+        "Sr. Software Engg. Parents of Grades 4",
+        "8th Grade Student"
+    ],
+    "testimonialParagraph": [
+        "\"As a parent, I couldn't be happier with the education my children have received at Global School. The community is welcoming, the curriculum is challenging, and the emphasis on character development is unmatched. My children have not only excelled academically but have also grown into confident and compassionate individuals.\"",
+        "\"Choosing Global School for our children has been one of the best decisions we've ever made. The school's nurturing environment, combined with its rigorous academic program, has helped our kids thrive both in and out of the classroom. We've seen tremendous growth in their confidence, critical thinking skills, and love for learning. The supportive community of teachers and staff truly care about each child's success.\"",
+        "\"What sets Global School apart is the focus on the whole child. Not only are our children excelling academically, but they are also developing strong moral values and social skills. The teachers are passionate, approachable, and always willing to go the extra mile to support our kids. We feel confident that they are receiving an education that prepares them for future challenges while also encouraging their individual talents.\"",
+        "\"From the moment we stepped onto the campus of Global School, we knew it was the right place for our daughter. The welcoming atmosphere, diverse curriculum, and emphasis on character education have made a significant impact on her development. She comes home excited about what she's learned every day, and we've seen her grow into a curious and confident young person. We're so grateful for the care and attention she receives from her teachers.\"",
+        "\"We've been part of the Global School community for several years, and it feels like a second family. The individualized attention each child receives is unparalleled, and the school's commitment to fostering a love of learning is evident in everything they do. Our son has flourished here, both academically and socially, and we couldn't be happier with the progress he's made.\"",
+        "\"At Global School, our children are not just students; they are valued members of a caring community. The school's approach to education is holistic, balancing academics with social, emotional, and ethical development. We've seen our children become more confident, independent, and motivated learners. The dedication of the teachers and staff is extraordinary, and we are proud to be part of this wonderful school.\"",
+        "\"My time at Global School has been nothing short of amazing. The teachers are passionate and truly care about each student's success. The small class sizes mean I get personalized attention, and the diverse range of extracurricular activities has allowed me to explore my interests. I feel well-prepared for college and beyond!\""
+    ],
     "googleMapUrl": "",
     "phoneNumber": "",
     "emailId": "",
