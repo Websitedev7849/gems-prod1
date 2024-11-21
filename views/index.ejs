@@ -66,11 +66,11 @@
     <!-- contact-us section end -->
     
     <!-- info section starts -->
-    <%- include('./sections/info-section') %>
+    <%- include('./sections/info-section', {phoneNumber: contentJson.phoneNumber, emailId: contentJson.emailId, facebookLink: contentJson.facebookLink, instagramLink: contentJson.instagramLink, branchAddress: contentJson.branchAddress}) %>
     <!-- info section ends -->
     
     <!-- Social Medial Links starts -->
-    <%- include('./sections/social-media-links') %>
+    <%- include('./sections/social-media-links', {emailId: contentJson.emailId, facebookLink: contentJson.facebookLink, instagramLink: contentJson.instagramLink}) %>
     <!-- Social Medial Links ends -->
 
     <!-- footer section -->
