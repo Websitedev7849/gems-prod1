@@ -11,8 +11,9 @@
           </h2>
           <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
             <div class="accordion-body">
+            <% if (Array.isArray(prePrimaryCardTitle)) { %>
                 <div class="row">
-                    <% for (let i = 0; i < prePrimaryCardTitle.length; i++) { %>
+                <% for (let i = 0; i < prePrimaryCardTitle.length; i++) { %>
                     <div class="col-lg-6 activity my-3">
                         <div class="d-flex justify-content-around align-items-between">
                             <div class="img-container">
@@ -23,8 +24,22 @@
                             </div>
                         </div>
                     </div>
-                    <% } %>
+                <% } %>
                 </div>
+            <% } else { %> 
+                <div class="row">
+                    <div class="col-lg-6 activity my-3">
+                        <div class="d-flex justify-content-around align-items-between">
+                            <div class="img-container">
+                                <img class="w-100 h-100" src="./img/activities/prePrimaryActivityImages/prePrimaryActivityImage1.png">
+                            </div>
+                            <div class="texts ms-3 w-75 pt-5">
+                                <h5><%= prePrimaryCardTitle %></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>  
             </div>
           </div>
         </div>
@@ -36,20 +51,35 @@
           </h2>
           <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <div class="row">
+                <% if (Array.isArray(primaryCardTitle)) { %>
+                    <div class="row">
                     <% for (let i = 0; i < primaryCardTitle.length; i++) { %>
-                    <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
-                            <div class="img-container">
-                                <img class="w-100 h-100" src="./img/activities/primaryActivityImages/<%= `primaryActivityImage${i+1}` %>.png">
+                        <div class="col-lg-6 activity my-3">
+                            <div class="d-flex justify-content-around align-items-between">
+                                <div class="img-container">
+                                    <img class="w-100 h-100" src="./img/activities/primaryActivityImages/<%= `prePrimaryActivityImage${i+1}` %>.png">
+                                </div>
+                                <div class="texts ms-3 w-75 pt-5">
+                                    <h5><%= primaryCardTitle[i] %></h5>
+                                </div>
                             </div>
-                            <div class="texts ms-3 w-75 pt-5">
-                                <h5><%= primaryCardTitle[i] %></h5>
+                        </div>
+                    <% } %>
+                    </div>
+                <% } else { %> 
+                    <div class="row">
+                        <div class="col-lg-6 activity my-3">
+                            <div class="d-flex justify-content-around align-items-between">
+                                <div class="img-container">
+                                    <img class="w-100 h-100" src="./img/activities/primaryActivityImages/primaryActivityImage1.png">
+                                </div>
+                                <div class="texts ms-3 w-75 pt-5">
+                                    <h5><%= primaryCardTitle %></h5>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <% } %>
-                </div>
+                <% } %>
             </div>
         </div>
     </div>

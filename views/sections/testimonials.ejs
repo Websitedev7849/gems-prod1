@@ -1,34 +1,49 @@
 <section class="testimonial">
     <div id="carouselExampleIndicators" class="my-5 carousel slide">
         <div class="carousel-indicators z-1">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            <% if (Array.isArray(testimonialName)) { %>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <%for (let i = 1; i < testimonialName.length; i++) { %>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= i %>" ></button>
+                <% } %>
+            <% } else { %>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" aria-label="Slide 2"></button>
+            <% } %>
         </div>
         <div class="carousel-inner">
             <h1>Testimonials</h1>
-            <div class="carousel-item active">
-                <div class="container testimonial-container">
-                    <img src="./img/testimonials/<%= `testimonialProfilePic1` %>.png" alt="Avatar" style="width:90px;">
-                    <h3><%= testimonialName[0] %></h3>
-                    <h5><%= testimonialDesignation[0] %></h5>
-                    <p class="review"><%= testimonialParagraph[0] %></p>
-                </div>
-            </div>
-            <%for (let i = 1; i < testimonialName.length; i++) { %>
-                <div class="carousel-item">
+
+            <% if (Array.isArray(testimonialName)) { %>
+                <div class="carousel-item active">
                     <div class="container testimonial-container">
-                        <img src="./img/testimonials/<%= `testimonialProfilePic${i+1}` %>.png" alt="Avatar" style="width:90px;">
-                        <h3><%= testimonialName[i] %></h3>
-                        <h5><%= testimonialDesignation[i] %></h5>
-                        <p class="review"><%= testimonialParagraph[i] %></p>
+                        <img src="./img/testimonials/<%= `testimonialProfilePic1` %>.png" alt="Avatar" style="width:90px;">
+                        <h3><%= testimonialName[0] %></h3>
+                        <h5><%= testimonialDesignation[0] %></h5>
+                        <p class="review"><%= testimonialParagraph[0] %></p>
+                    </div>
+                </div>
+                <%for (let i = 1; i < testimonialName.length; i++) { %>
+                    <div class="carousel-item">
+                        <div class="container testimonial-container">
+                            <img src="./img/testimonials/<%= `testimonialProfilePic${i+1}` %>.png" alt="Avatar" style="width:90px;">
+                            <h3><%= testimonialName[i] %></h3>
+                            <h5><%= testimonialDesignation[i] %></h5>
+                            <p class="review"><%= testimonialParagraph[i] %></p>
+                        </div>
+                    </div>
+                <% } %>
+            <% } else { %>
+                <div class="carousel-item active">
+                    <div class="container testimonial-container">
+                        <img src="./img/testimonials/testimonialProfilePic1.png" alt="Avatar" style="width:90px;">
+                        <h3><%= testimonialName %></h3>
+                        <h5><%= testimonialDesignation %></h5>
+                        <p class="review"><%= testimonialParagraph %></p>
                     </div>
                 </div>
             <% } %>
+
+            
             
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

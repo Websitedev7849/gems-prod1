@@ -31,8 +31,12 @@
         <div class="col-md-3">
           <div class="info_insta">
             <h5>Branches</h5>
-            <%for (let i = 0; i < branchAddress.length; i++) {%>
-              <p class="pr-0 pr-md-4 pr-md-5"><b>Branch<%= i + 1 %>:</b> <%= branchAddress[i] %> </p>
+            <% if (Array.isArray(branchAddress)) { %>
+              <%for (let i = 0; i < branchAddress.length; i++) {%>
+                <p class="pr-0 pr-md-4 pr-md-5"><b>Branch<%= i + 1 %>:</b> <%= branchAddress[i] %> </p>
+              <% } %>
+            <% } else { %>
+              <p class="pr-0 pr-md-4 pr-md-5"><b>Branch:</b> <%= branchAddress %> </p>
             <% } %>
           </div>
         </div>
