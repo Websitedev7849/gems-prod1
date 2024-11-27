@@ -21,9 +21,6 @@ app.use(express.urlencoded({ extended: true })); // For parsing application/x-ww
 
 app.use(fileUpload())
 
-// TODO: 
-// 1. Convert index.html to EJS (Done)
-// 2. SCAN content from content.json and server dynamically
 app.get("/", function (req, res) {
     const contentJsonString = readFileSync(__dirname + "/content/content.json")
     const contentJson = JSON.parse(contentJsonString)
