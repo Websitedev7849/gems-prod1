@@ -1,6 +1,10 @@
 require("dotenv").config()
 const { sendEmail } = require("./mailHandler")
 const fileUpload = require('express-fileupload');
+
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+
 const path = require('path');
 
 const fileHandler = require("./utils/fileHandlers")
@@ -13,6 +17,9 @@ const app = express()
 const PORT = process.env.PORT || 5501
 
 app.use( express.static("public") )
+
+app.use(cookieParser()); // Middleware to parse cookies
+
 app.set('view engine', 'ejs')
 
 // Middleware to parse JSON and URL-encoded form data
@@ -27,8 +34,30 @@ app.get("/", function (req, res) {
     res.render("index.ejs", {contentJson})
 })
 
+
+app.get("/login", (req, res) => {
+    res.render("login")
+})
+app.post("/login", (req, res) => {
+    // { username: 'SAM_WINCHESTER', password: '123' }
+    if (req.body.username === process.env.ADMIN_USERNAME && req.body.password === process.env.ADMIN_PASSWORD) {
+        const token = jwt.sign({ username: req.body.username, password: req.body.password }, process.env.JWT_SECRET_KEY, { expiresIn: '5m' });
+        res.cookie('jwt', token, { maxAge: 300000 }); // Expires in 5 min
+        res.redirect("/user/cms")
+    }
+    else {
+        res.send("<h1>Invalid Credentials</h1>")
+    }
+})
+
 app.get("/user/cms", (req, res)=> {
-    res.render("cms_form.ejs")
+    
+    if (req.cookies.jwt && jwt.verify(req.cookies.jwt, process.env.JWT_SECRET_KEY)) {
+        res.render("cms_form.ejs")
+    } else {
+        res.redirect("/login")
+    }
+    
 })
 
 
