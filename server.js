@@ -31,7 +31,7 @@ app.use(fileUpload())
 app.get("/", function (req, res) {
     const contentJsonString = readFileSync(__dirname + "/content/content.json")
     const contentJson = JSON.parse(contentJsonString)
-    res.render("index.ejs", {contentJson})
+    res.render("index.ejs", {contentJson: contentJson, emailSuccess: req.query["emailsuccess"]})
 })
 
 
@@ -71,8 +71,6 @@ app.post("/user/cms", async (req, res)=> {
         // The name of the input field (i.e. "myFile") is used to retrieve the uploaded file
         let uploadedFiles = req.files;
 
-        console.log(req.files);
-        // res.send(req.body)
 
         // Define the upload path
         let uploadPath = null
@@ -146,10 +144,12 @@ app.get("/handle-form", async (req, res) => {
     try {
         // This below function will send an email to Admin
         await sendEmail(req.query)
-        res.redirect("/")
+        res.redirect("/?emailsuccess=true#contact-us")
     } catch (error) {
-        console.log(error);
-        res.end("<h1>Error in sending mail</h1>").status(501)
+        res.send(`
+            <h1> Error in sending enquiry!!! </h1> <br>
+            <a href="/"> Go to Home Page </a>
+        `).status(501)
     }
     
     
