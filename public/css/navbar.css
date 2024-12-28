@@ -3,6 +3,10 @@
     box-shadow: 0px 1px 10px #000;
 }
 
+.navbar-brand {
+    box-shadow: -1px 1px 14px -3px #000000bf;
+}
+
 .navbar-brand img{
     height: 3.5rem;
     width: 7.2rem;
