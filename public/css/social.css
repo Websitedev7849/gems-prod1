@@ -1,9 +1,8 @@
 .social {
   display: flex;
-  width: 100vw;
   justify-content: center;
   align-items: center;
-  background-color: #90973b;
+  background-color: var(--secondary-bg);
   height: 6rem;
 }
 
@@ -14,13 +13,10 @@
   align-items: center;
   height: auto;
   width: 350px;
-  background-color: #90973b;
   border-radius: 10px;
+  background-color: var(--primary-bg);
   position: relative;
-  box-shadow: -7px -7px 20px 0px #96ac30, -4px -4px 5px 0px #96ac30,
-    7px 7px 20px 0px #6a7a22, 4px 4px 5px 0px #6a7a22,
-    inset 0px 0px 0px 0px #96ac30, inset 0px 0px 0px 0px #6a7a22,
-    inset 0px 0px 0px 0px #96ac30, inset 0px 0px 0px 0px #6a7a22;
+  box-shadow: -1px 1px 14px -3px #000000bf;
 }
 
 .btn {
@@ -50,10 +46,7 @@
 
   &:hover {
     cursor: pointer;
-    box-shadow: -7px -7px 20px 0px #96ac30, -4px -4px 5px 0px #96ac30,
-    7px 7px 20px 0px #6a7a22, 4px 4px 5px 0px #6a7a22,
-    inset 0px 0px 0px 0px #96ac30, inset 0px 0px 0px 0px #6a7a22,
-    inset 0px 0px 0px 0px #96ac30, inset 0px 0px 0px 0px #6a7a22;
+    box-shadow: -1px 1px 14px -3px #000000bf;
 
     /* box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
       rgba(15, 1, 1, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,

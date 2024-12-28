@@ -41,7 +41,7 @@
   .footer_section {
     background-color: #252525;
     padding: 20px;
-    background-color: #7a772d;
+    background-color: var(--primary-bg);
   }
   
   .footer_section p {

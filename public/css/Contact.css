@@ -1,5 +1,5 @@
 .contact-us {
-  background-color: #90973b;
+  background-color: var(--primary-bg);
   font-family: "Poppins", sans-serif;
 }
 form {

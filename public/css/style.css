@@ -40,7 +40,7 @@ body {
 /*header section*/
 .hero_area {
   position: relative;
-  background-color: #78853f;
+  background-color: var(--primary-bg);
   height: 85vh;
 }
 
@@ -67,7 +67,7 @@ body {
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
   padding: 10px 30px;
-  color: #fefdfc;
+  color: var(--font-color);
   text-align: center;
   text-transform: uppercase;
 }
@@ -131,7 +131,7 @@ a:focus {
 .navbar-brand span {
   font-size: 24px;
   font-weight: 700;
-  color: #fefdfc;
+  color: var(--font-color);
   margin-left: 10px;
   text-transform: uppercase;
 }
@@ -173,7 +173,7 @@ a:focus {
 }
 
 .slider_section .detail-box {
-  color: #fefdfc;
+  color: var(--font-color);
 }
 
 .slider_section .detail-box h1 {
@@ -184,13 +184,13 @@ a:focus {
 }
 
 .slider_section .detail-box span {
-  color: #fefdfc;
+  color: var(--font-color);
   font-size: 3.5rem;
   font-weight: 700;
 }
 
 .slider_section .detail-box p {
-  color: #fefdfc;
+  color: var(--font-color);
   margin-top: 25px;
 }
 
@@ -215,7 +215,7 @@ a:focus {
 .slider_section .detail-box .btn-box .btn-2 {
   display: inline-block;
   padding: 12px 42px;
-  background-color: #fefdfc;
+  background-color: var(--font-color);
   color: #050505;
   border-radius: 0;
   text-transform: uppercase;
@@ -246,7 +246,7 @@ a:focus {
 
 .slider_section ol.carousel-indicators li.active {
   background-color: transparent;
-  border: 3px solid #fefdfc;
+  border: 3px solid var(--font-color);
 }
 
 .offer_section .content-box {
@@ -285,15 +285,15 @@ a:focus {
 }
 
 .offer_section .content-box:hover .img-box svg {
-  fill: #fefdfc !important;
+  fill: var(--font-color) !important;
 }
 
 .offer_section .content-box:hover .img-box svg g {
-  fill: #fefdfc !important;
+  fill: var(--font-color) !important;
 }
 
 .offer_section .content-box:hover .img-box svg path {
-  fill: #fefdfc !important;
+  fill: var(--font-color) !important;
 }
 
 .offer_section .content-box .detail-box h6 {
@@ -440,7 +440,7 @@ a:focus {
 }
 
 .contact_section h2 span {
-  color: #fefdfc;
+  color: var(--font-color);
 }
 
 .contact_section form {
@@ -454,7 +454,7 @@ a:focus {
   border-radius: 25px;
   margin-bottom: 25px;
   padding-left: 25px;
-  background-color: #fefdfc;
+  background-color: var(--font-color);
   outline: none;
   color: #101010;
 }
@@ -497,7 +497,7 @@ a:focus {
 
 .info_section {
   background-color: #252525;
-  color: #fefdfc;
+  color: var(--font-color);
   font-family: "Lato", sans-serif;
 }
 
@@ -525,7 +525,7 @@ a:focus {
 .info_section .info_logo a span {
   font-size: 24px;
   font-weight: 700;
-  color: #fefdfc;
+  color: var(--font-color);
   margin-left: 10px;
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
@@ -570,10 +570,10 @@ a:focus {
 .footer_section p {
   margin: 0;
   text-align: center;
-  color: #fefdfc;
+  color: var(--font-color);
 }
 
 .footer_section a {
-  color: #fefdfc;
+  color: var(--font-color);
 }
 /*# sourceMappingURL=style.css.map */

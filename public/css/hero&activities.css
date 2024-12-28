@@ -17,8 +17,7 @@ body {
 
 .hero {
     height: 98vh;
-    width: 100vw;
-    background-color: var(--green);
+    background-color: var(--primary-bg);
 }
 
 .hero .inner-hero {

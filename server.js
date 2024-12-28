@@ -51,9 +51,11 @@ app.post("/login", (req, res) => {
 })
 
 app.get("/user/cms", (req, res)=> {
-    
+    const contentJsonString = readFileSync(__dirname + "/content/content.json")
+    const contentJson = JSON.parse(contentJsonString)
+
     if (req.cookies.jwt && jwt.verify(req.cookies.jwt, process.env.JWT_SECRET_KEY)) {
-        res.render("cms_form.ejs")
+        res.render("cms_form.ejs", {contentJson: contentJson})
     } else {
         res.redirect("/login")
     }
@@ -127,7 +129,15 @@ app.post("/user/cms", async (req, res)=> {
     
     for (let key of Object.keys(req.body)) {
         if (req.body[key] !== "") {
-            contentJson[key] = req.body[key] 
+            // incase of color codes
+            // if submitted color code != existing color code update it
+            if (req.body[key] === "primaryBgColor" || req.body[key] === "secondaryBgColor") {
+                if (req.body[key] !== contentJson[key]) 
+                    contentJson[key] = req.body[key]
+            }
+            else {
+                contentJson[key] = req.body[key] 
+            }
         }
     }
 

@@ -1,24 +1,24 @@
-<section class="navbar">
-    <div class="mobile">
-        <div class="brand">
-            <a href="/" class="logo">
-                <img src="./img/logo-square.png" alt="School Logo">
-            </a>
-        </div>
-        <div class="hamburger">
-            <a class="icon">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-    </div>
-    <div class="navlinks">
+<nav class="navbar navbar-expand-lg navbar-dark static-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="./img/logo-square.png" alt="...">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
         <% let individualNavLinks = navLinks.split(',') %>
-        <% for (let i = 0; i < individualNavLinks.length; i++) { %>
+            <% for (let i = 0; i < individualNavLinks.length; i++) { %>
                 <% const [name, link] =  individualNavLinks[i].split('[') %>
-                <a href="<%= link.replace(']', '') %>" class="nav-item"><%= name %></a>
+                <li class="nav-item mx-3">
+                    <a class="nav-link active" aria-current="page" href="<%= link.replace(']', '') %>"><%= name %></a>
+                </li>
         <% } %>
-        <!-- <a href="#about-container" class="nav-item">ABOUT US</a> -->
-        <!-- <a href="#philosophy" class="nav-item">OUR PHILOSOPHY</a> -->
+        <li class="nav-item mx-3">
+            <a class="nav-link active" href="#contact-info">CONTACT US</a>
+        </li>
+        </ul>
+      </div>
     </div>
-    <a href="#contact-info" class="apply">CONTACT US</a>
-</section>
+</nav>

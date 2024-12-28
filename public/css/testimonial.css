@@ -1,7 +1,7 @@
 .carousel-inner
 {
     padding-top: 10px;
-    background: #78853f;
+    background-color: var(--secondary-bg);
 }
 
 .carousel-item
@@ -24,13 +24,14 @@
 /* Review */
 .testimonial-container
 {
-    background-color: #90953b;
+    background: var(--primary-bg);
     width: 80%;
     border-radius: 20px;
     text-align: center;
     margin: auto;
     padding: 10px;
     text-wrap: wrap;
+    box-shadow: -1px 1px 14px -3px #000000bf;
 }
 
 .testimonial-container img

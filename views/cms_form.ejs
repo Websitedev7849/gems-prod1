@@ -10,12 +10,27 @@
         .card {
             margin-bottom: 20px;
         }
+        
+        .secondary-bg {
+            background-color: #f8f9fa;
+        }
     </style>
 </head>
 <body>
     <div class="container mt-5">
         <form action="/user/cms" method="post" encType="multipart/form-data">
             <h1 class="mb-4">CMS Form</h1>
+
+             <!-- Color Picker Section -->
+             <h2>Customize Colors</h2>
+             <div class="mb-4">
+                 <label for="primaryBgColor" class="form-label">Primary Background Color</label>
+                 <input type="color" class="form-control form-control-color" id="primaryBgColor" name="primaryBgColor" value="<%= contentJson['primaryBgColor'] %>">
+             </div>
+             <div class="mb-4">
+                 <label for="secondaryBgColor" class="form-label">Secondary Background Color</label>
+                 <input type="color" class="form-control form-control-color" id="secondaryBgColor" name="secondaryBgColor" value="<%= contentJson['secondaryBgColor'] %>">
+             </div>
 
             <!-- Navbar Section -->
             <h2>Navbar Section</h2>
@@ -168,6 +183,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
     
+
+    // activities
     const addPrePrimaryCard = document.getElementById('addPrePrimaryCard');
     const prePrimaryCards = document.getElementById('prePrimaryCards');
 
