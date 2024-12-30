@@ -12,3 +12,14 @@
     height: 3.8rem;
     width: 6.2rem;
 }
+
+.last-nav-link {
+    background-color: var(--yellow);
+    color: #000;
+}
+
+.last-nav-link:hover {
+    color: #000;
+    box-shadow: -1px 1px 14px -3px var(--yellow);
+
+}
