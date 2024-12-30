@@ -12,14 +12,14 @@
           <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
             <div class="accordion-body">
             <% if (Array.isArray(prePrimaryCardTitle)) { %>
-                <div class="row">
+                <div class="row gap-4 justify-content-center">
                 <% for (let i = 0; i < prePrimaryCardTitle.length; i++) { %>
                     <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
+                        <div class="d-flex flex-column justify-content-around align-items-center">
                             <div class="img-container">
                                 <img class="w-100 h-100" src="./img/activities/prePrimaryActivityImages/<%= `prePrimaryActivityImage${i+1}` %>.png">
                             </div>
-                            <div class="texts ms-3 w-75 pt-5">
+                            <div class="texts text-center ms-3 w-75 pt-3">
                                 <h5><%= prePrimaryCardTitle[i] %></h5>
                             </div>
                         </div>
@@ -27,13 +27,13 @@
                 <% } %>
                 </div>
             <% } else { %> 
-                <div class="row">
+                <div class="row gap-4 justify-content-center">
                     <div class="col-lg-6 activity my-3">
-                        <div class="d-flex justify-content-around align-items-between">
+                        <div class="d-flex flex-column justify-content-around align-items-center">
                             <div class="img-container">
                                 <img class="w-100 h-100" src="./img/activities/prePrimaryActivityImages/prePrimaryActivityImage1.png">
                             </div>
-                            <div class="texts ms-3 w-75 pt-5">
+                            <div class="texts text-center ms-3 w-75 pt-3">
                                 <h5><%= prePrimaryCardTitle %></h5>
                             </div>
                         </div>
@@ -52,14 +52,14 @@
           <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
             <div class="accordion-body">
                 <% if (Array.isArray(primaryCardTitle)) { %>
-                    <div class="row">
+                    <div class="row gap-4 justify-content-center">
                     <% for (let i = 0; i < primaryCardTitle.length; i++) { %>
                         <div class="col-lg-6 activity my-3">
-                            <div class="d-flex justify-content-around align-items-between">
+                            <div class="d-flex flex-column justify-content-around align-items-center">
                                 <div class="img-container">
                                     <img class="w-100 h-100" src="./img/activities/primaryActivityImages/<%= `primaryActivityImage${i+1}` %>.png">
                                 </div>
-                                <div class="texts ms-3 w-75 pt-5">
+                                <div class="texts text-center ms-3 w-75 pt-3">
                                     <h5><%= primaryCardTitle[i] %></h5>
                                 </div>
                             </div>
@@ -67,13 +67,13 @@
                     <% } %>
                     </div>
                 <% } else { %> 
-                    <div class="row">
+                    <div class="row gap-4 justify-content-center">
                         <div class="col-lg-6 activity my-3">
-                            <div class="d-flex justify-content-around align-items-between">
+                            <div class="d-flex flex-column justify-content-around align-items-center">
                                 <div class="img-container">
                                     <img class="w-100 h-100" src="./img/activities/primaryActivityImages/primaryActivityImage1.png">
                                 </div>
-                                <div class="texts ms-3 w-75 pt-5">
+                                <div class="texts text-center ms-3 w-75 pt-3">
                                     <h5><%= primaryCardTitle %></h5>
                                 </div>
                             </div>
