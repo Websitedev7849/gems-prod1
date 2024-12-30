@@ -48,22 +48,12 @@
     <%- include('./sections/navbar', {navLinks: contentJson.navLinks}) %>
     <!-- Navigation Bar ends -->
     
-    <!-- Hero Section Starts -->
-    <%- include('./sections/hero', {heroTitle: contentJson.heroTitle, heroSubTitle: contentJson.heroSubTitle, heroParagraph: contentJson.heroParagraph, heroButtonLink: contentJson.heroButtonLink}) %>
-    <!-- Hero Section Ends -->
     
-    <!-- Activities Section Starts -->
-    <%- include('./sections/activities', {prePrimaryCardTitle: contentJson.prePrimaryCardTitle, primaryCardTitle: contentJson.primaryCardTitle}) %>
-    <!-- Activities Section Ends -->
+    <!-- Gems philosophy -->
+    <%- include('./sections/our-philosophy', {philosophyTitle: contentJson.philosophyTitle, philosophySubtitle: contentJson.philosophySubtitle, philosophyLink: contentJson.philosophyLink, philosophyParagraph: contentJson.philosophyParagraph}) %>
+    <!-- End Gems philosophy -->
     
-    <!-- about flex container starts-->
-    <!-- <%- include('./sections/about-us', {aboutUsTitle: contentJson.aboutUsTitle, aboutUsSubtitle: contentJson.aboutUsSubtitle, aboutUsParagraph: contentJson.aboutUsParagraph}) %> -->
-    <!-- about flex container ends-->
-    
-    <!-- contact-us section start -->
-    <%- include('./sections/contact-us', {googleMapUrl: contentJson.googleMapUrl, emailSuccess: emailSuccess}) %>
-    <!-- contact-us section end -->
-    
+
     <!-- info section starts -->
     <%- include('./sections/info-section', {phoneNumber: contentJson.phoneNumber, emailId: contentJson.emailId, facebookLink: contentJson.facebookLink, instagramLink: contentJson.instagramLink, branchAddress: contentJson.branchAddress}) %>
     <!-- info section ends -->

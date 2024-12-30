@@ -165,6 +165,14 @@ app.get("/handle-form", async (req, res) => {
     
 })
 
+
+app.get("/:page", (req, res) => {
+    const contentJsonString = readFileSync(__dirname + "/content/content.json")
+    const contentJson = JSON.parse(contentJsonString)
+
+    res.render(`${req.params.page}`, {contentJson})
+})
+
 app.listen(PORT, () => {
     console.log(`Server Started at PORT: ${PORT}`);  
 })
