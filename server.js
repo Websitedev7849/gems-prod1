@@ -1,4 +1,7 @@
 require("dotenv").config()
+const https = require("https")
+const fs = require("fs")
+
 const { sendEmail } = require("./mailHandler")
 const fileUpload = require('express-fileupload');
 
@@ -173,6 +176,9 @@ app.get("/:page", (req, res) => {
     res.render(`${req.params.page}`, {contentJson})
 })
 
-app.listen(PORT, () => {
-    console.log(`Server Started at PORT: ${PORT}`);  
-})
+const SSLServer = https.createServer({
+    key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
+    cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem")),
+}, app)
+
+SSLServer.listen(80, () => { console.log(`Listening on Port:${PORT}`)});
