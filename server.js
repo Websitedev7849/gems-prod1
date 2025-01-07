@@ -181,4 +181,4 @@ const SSLServer = https.createServer({
     cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem")),
 }, app)
 
-SSLServer.listen(80, () => { console.log(`Listening on Port:${PORT}`)});
+SSLServer.listen(PORT, () => { console.log(`Listening on Port:${PORT}`)});
