@@ -1,5 +1,5 @@
 <section class="testimonial d-flex justify-content-center">
-    <div id="carouselExampleIndicators" class="my-5 carousel slide w-sm-75">
+    <div id="carouselExampleIndicators" class="my-3 carousel slide w-sm-75">
         <div class="carousel-indicators z-1">
             <% if (Array.isArray(testimonialName)) { %>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -14,31 +14,31 @@
             <h1>Testimonials</h1>
 
             <% if (Array.isArray(testimonialName)) { %>
-                <div class="carousel-item active">
+                <div class="carousel-item text-white active text-white">
                     <div class="container testimonial-container">
                         <img src="./img/testimonials/<%= `testimonialProfilePic1` %>.png" alt="Avatar" style="width:90px;">
                         <h3><%= testimonialName[0] %></h3>
                         <h5><%= testimonialDesignation[0] %></h5>
-                        <p class="review"><%= testimonialParagraph[0] %></p>
+                        <p class="text-start review text-start"><%= testimonialParagraph[0] %></p>
                     </div>
                 </div>
                 <%for (let i = 1; i < testimonialName.length; i++) { %>
-                    <div class="carousel-item">
+                    <div class="carousel-item text-white">
                         <div class="container testimonial-container">
                             <img src="./img/testimonials/<%= `testimonialProfilePic${i+1}` %>.png" alt="Avatar" style="width:90px;">
                             <h3><%= testimonialName[i] %></h3>
                             <h5><%= testimonialDesignation[i] %></h5>
-                            <p class="review"><%= testimonialParagraph[i] %></p>
+                            <p class="review text-start"><%= testimonialParagraph[i] %></p>
                         </div>
                     </div>
                 <% } %>
             <% } else { %>
-                <div class="carousel-item active">
+                <div class="carousel-item text-white active">
                     <div class="container testimonial-container">
                         <img src="./img/testimonials/testimonialProfilePic1.png" alt="Avatar" style="width:90px;">
                         <h3><%= testimonialName %></h3>
                         <h5><%= testimonialDesignation %></h5>
-                        <p class="review"><%= testimonialParagraph %></p>
+                        <p class="review text-start"><%= testimonialParagraph %></p>
                     </div>
                 </div>
             <% } %>
