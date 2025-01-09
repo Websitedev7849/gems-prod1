@@ -173,7 +173,11 @@ app.get("/:page", (req, res) => {
     const contentJsonString = readFileSync(__dirname + "/content/content.json")
     const contentJson = JSON.parse(contentJsonString)
 
-    res.render(`${req.params.page}`, {contentJson})
+    try {
+        res.render(`${req.params.page}`, {contentJson})
+    } catch (error) {
+        res.send("Something went wrong").status(501)
+    }
 })
 
 const SSLServer = https.createServer({
