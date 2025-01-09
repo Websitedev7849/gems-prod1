@@ -100,7 +100,7 @@
 	width:60px;
 	height:60px;
 	bottom:40px;
-	right:40px;
+	right:30px;
 	background-color:#25d366;
 	color:#000;
 	border-radius:50px;
@@ -121,7 +121,7 @@
 @media (min-width: 768px) {
   .float {
     width: 160px;
-	  right:30px;
+	  right: 40px;
   }
 }
 
