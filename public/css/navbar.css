@@ -2,6 +2,12 @@
     width: 14rem;
 }
 
+.logoandname p {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .custom-navbar {
     background-color: var(--secondary-bg);
     box-shadow: 0px 1px 10px #000;
