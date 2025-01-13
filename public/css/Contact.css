@@ -9,7 +9,7 @@ form {
 .contact-us input {
   outline: none;
   border: 0;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   width: 100%;
   padding: 15px 15px 15px 25px;
   background-color: #fefdfc;
