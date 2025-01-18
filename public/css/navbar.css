@@ -1,5 +1,5 @@
 .logoandname {
-    width: 14rem;
+    width: 224px;
 }
 
 .logoandname p {
@@ -32,4 +32,15 @@
     color: #000;
     box-shadow: -1px 1px 14px -3px var(--yellow);
 
+}
+
+@media (min-width: 576px) { 
+    .logoandname {
+        width: 350px;
+    }
+
+    .navbar-brand {
+        height: 4.2rem;
+        width: 6rem;
+    }
 }
