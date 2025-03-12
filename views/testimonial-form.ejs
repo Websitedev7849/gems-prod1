@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <%- include('./sections/stylesheets', {contentJson}) %>
+</head>
+<body>
+
+    <!-- Navigation Bar starts -->
+    <%- include('./sections/navbar', {navLinks: contentJson.navLinks}) %>
+    <!-- Navigation Bar ends -->
+
+    <div class="container mt-3 mb-3">
+        <div class="card shadow-lg p-4">
+            <h2 class="text-center mb-4">Submit Your Testimonial</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="profilePhoto" class="form-label">Profile Photo (Optional)</label>
+                    <input type="file" class="form-control" id="profilePhoto" accept="image/*">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="designation" class="form-label">Designation <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="designation" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="testimonial" class="form-label">Testimonial</label>
+                    <textarea class="form-control" id="testimonial" rows="4"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- info section starts -->
+    <%- include('./sections/info-section', {phoneNumber: contentJson.phoneNumber, emailId: contentJson.emailId, facebookLink: contentJson.facebookLink, instagramLink: contentJson.instagramLink, branchAddress: contentJson.branchAddress}) %>
+    <!-- info section ends -->
+    
+    <!-- Social Medial Links starts -->
+    <%- include('./sections/social-media-links', {emailId: contentJson.emailId, facebookLink: contentJson.facebookLink, instagramLink: contentJson.instagramLink}) %>
+    <!-- Social Medial Links ends -->
+
+    <!-- footer section -->
+    <section class="container-fluid footer_section">
+      <p>&copy; 2019 All Rights Reserved By GEMS Pune</p>
+    </section>
+    <!-- footer section -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

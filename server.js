@@ -168,6 +168,12 @@ app.get("/handle-form", async (req, res) => {
     
 })
 
+app.get("/submit-testimonial", async (req, res) => {
+    const contentJsonString = readFileSync(__dirname + "/content/content.json")
+    const contentJson = JSON.parse(contentJsonString)
+    
+    res.render("testimonial-form.ejs", {contentJson: contentJson});
+})
 
 app.get("/:page", (req, res) => {
     const contentJsonString = readFileSync(__dirname + "/content/content.json")
