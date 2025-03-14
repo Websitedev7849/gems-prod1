@@ -171,8 +171,25 @@ app.get("/handle-form", async (req, res) => {
 app.get("/submit-testimonial", async (req, res) => {
     const contentJsonString = readFileSync(__dirname + "/content/content.json")
     const contentJson = JSON.parse(contentJsonString)
-    
+
     res.render("testimonial-form.ejs", {contentJson: contentJson});
+})
+
+app.post("/submit-testimonial", async (req, res) => {
+    const testimonialBufferString = readFileSync(__dirname + "/content/testimonial-buffer.json")
+    const testimonialBuffer = JSON.parse(testimonialBufferString)
+
+    // if req.body is not empty
+    if (Object.keys(req.body).length > 0) {
+        // generate random small id
+        req.body.bufferID = `${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+        testimonialBuffer.push(req.body);
+    }
+    
+    // write form data to content.json file
+    writeFileSync(`${__dirname}/content/testimonial-buffer.json`, JSON.stringify(testimonialBuffer))
+    
+    res.redirect("/submit-testimonial");
 })
 
 app.get("/:page", (req, res) => {
