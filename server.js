@@ -168,14 +168,8 @@ app.get("/handle-form", async (req, res) => {
     
 })
 
-app.get("/submit-testimonial", async (req, res) => {
-    const contentJsonString = readFileSync(__dirname + "/content/content.json")
-    const contentJson = JSON.parse(contentJsonString)
 
-    res.render("testimonial-form.ejs", {contentJson: contentJson});
-})
-
-app.post("/submit-testimonial", async (req, res) => {
+app.post("/testimonial-form", async (req, res) => {
     const testimonialBufferString = readFileSync(__dirname + "/content/testimonial-buffer.json")
     const testimonialBuffer = JSON.parse(testimonialBufferString)
 
@@ -189,7 +183,14 @@ app.post("/submit-testimonial", async (req, res) => {
     // write form data to content.json file
     writeFileSync(`${__dirname}/content/testimonial-buffer.json`, JSON.stringify(testimonialBuffer))
     
-    res.redirect("/submit-testimonial");
+    res.redirect("/testimonial-form");
+})
+
+app.get("/user/testimonial-approval", (req, res) => {
+    const testimonialJsonString = readFileSync(__dirname + "/content/testimonial-buffer.json")
+    const testimonialJson = JSON.parse(testimonialJsonString)
+
+    res.render("testimonial-approval", {testimonialJson});
 })
 
 app.get("/:page", (req, res) => {
