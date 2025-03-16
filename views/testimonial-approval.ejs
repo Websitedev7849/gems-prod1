@@ -12,7 +12,7 @@
         <div class="row d-flex flex-column align-items-center">
             
             <% testimonialJson.forEach((testimonial) => { %>
-                <div class="card mb-3" style="width: 100%; max-width: 500px;" id="#<%= testimonial.bufferID %>">
+                <div class="card mb-3" style="width: 100%; max-width: 500px;" id="_<%= testimonial.bufferID %>">
                     <div class="row g-0 align-items-center">
                         <div class="col-md-3 text-center p-2">
                             <img src="/img/testimonials/testimonialProfilePic1.png" class="rounded-circle" style="height: 60px; width: 60px;" alt="Profile Photo">
@@ -22,8 +22,8 @@
                                 <h5 class="card-title"> <%= testimonial.testimonialName %> </h5>
                                 <h6 class="card-subtitle mb-2 text-muted"> <%= testimonial.testimonialDesignation %> </h6>
                                 <p class="card-text"> <%= testimonial.testimonialParagraph %> </p>
-                                <button class="btn btn-success">Approve</button>
-                                <button class="btn btn-danger">Delete</button>
+                                <button class="btn btn-success" onclick="sendTransferAndDeleteTestimonialAPIRequest('<%=testimonial.bufferID%>')">Approve</button>
+                                <button class="btn btn-danger" onclick="sendDeleteTestimonialAPIRequest('<%=testimonial.bufferID%>')">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -38,5 +38,23 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        async function sendDeleteTestimonialAPIRequest(testimonialID) {
+            const response = await fetch('/user/testimonial-approval', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ bufferID: testimonialID }) // Sending bufferID in the request body
+            })
+
+            if (response.status === 200) {
+                document.querySelector(`#_${testimonialID}`).remove()
+                // window.alert("successfull")
+            }
+
+
+        }
+    </script>
 </body>
 </html>

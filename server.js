@@ -193,6 +193,16 @@ app.get("/user/testimonial-approval", (req, res) => {
     res.render("testimonial-approval", {testimonialJson});
 })
 
+app.delete("/user/testimonial-approval", (req, res) => {
+    const testimonialJsonString = readFileSync(__dirname + "/content/testimonial-buffer.json")
+    let testimonialJson = JSON.parse(testimonialJsonString)
+
+    testimonialJson = testimonialJson.filter(obj => obj.bufferID !== req.body.bufferID)
+
+    writeFileSync(`${__dirname}/content/testimonial-buffer.json`, JSON.stringify(testimonialJson))
+    res.send().status(200);
+})
+
 app.get("/:page", (req, res) => {
     const contentJsonString = readFileSync(__dirname + "/content/content.json")
     const contentJson = JSON.parse(contentJsonString)
