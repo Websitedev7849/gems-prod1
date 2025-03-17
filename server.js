@@ -203,6 +203,10 @@ app.delete("/user/testimonial-approval", (req, res) => {
     res.send().status(200);
 })
 
+// modify content.json
+// transfer to content.json
+app.put("/user/testimonial-approval", (req, res) => {})
+
 app.get("/:page", (req, res) => {
     const contentJsonString = readFileSync(__dirname + "/content/content.json")
     const contentJson = JSON.parse(contentJsonString)
