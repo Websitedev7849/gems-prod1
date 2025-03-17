@@ -203,9 +203,27 @@ app.delete("/user/testimonial-approval", (req, res) => {
     res.send().status(200);
 })
 
-// modify content.json
-// transfer to content.json
-app.put("/user/testimonial-approval", (req, res) => {})
+app.put("/user/testimonial-approval", (req, res) => {
+    const contentJsonString = readFileSync(__dirname + "/content/content.json")
+    const contentJson = JSON.parse(contentJsonString)
+
+    const testimonialJsonString = readFileSync(__dirname + "/content/testimonial-buffer.json")
+    let testimonialJson = JSON.parse(testimonialJsonString)
+
+    // find testimonial
+    const bufferTestimonial = testimonialJson.find(obj => obj.bufferID === req.body.bufferID)
+
+    // push it in contentjson
+    contentJson.testimonials.push(bufferTestimonial)
+
+    // delete it from testimoniol json 
+    testimonialJson = testimonialJson.filter(obj => obj.bufferID !== req.body.bufferID)
+
+    writeFileSync(`${__dirname}/content/testimonial-buffer.json`, JSON.stringify(testimonialJson))
+    writeFileSync(`${__dirname}/content/content.json`, JSON.stringify(contentJson))
+    res.send().status(200);
+
+})
 
 app.get("/:page", (req, res) => {
     const contentJsonString = readFileSync(__dirname + "/content/content.json")

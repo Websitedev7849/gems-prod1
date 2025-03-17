@@ -55,6 +55,21 @@
 
 
         }
+
+        async function sendTransferAndDeleteTestimonialAPIRequest(testimonialID) {
+            const response = await fetch('/user/testimonial-approval', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ bufferID: testimonialID }) // Sending bufferID in the request body
+            })
+
+            if (response.status === 200) {
+                document.querySelector(`#_${testimonialID}`).remove()
+                // window.alert("successfull")
+            }
+        }
     </script>
 </body>
 </html>

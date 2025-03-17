@@ -132,11 +132,7 @@
                 <textarea class="form-control" id="philosophyParagraph" name="philosophyParagraph" rows="4" placeholder="Describe our philosophy..."></textarea>
             </div>
 
-            <!-- Testimonial Section -->
-            <hr>
-            <h2>Testimonials Section</h2>
-            <div id="testimonialCards" class="mb-4"></div>
-            <button class="btn btn-secondary mb-4" id="addTestimonialCard" type="button">Add Testimonial</button>
+            
             
             <!-- Google Map Embed Link -->
             <hr>
@@ -219,35 +215,6 @@
         primaryCards.insertAdjacentHTML('beforeend', cardHTML);
     });
 
-    // Code to add testimonial card
-    const addTestimonialCard = document.getElementById('addTestimonialCard');
-    const testimonialCards = document.getElementById('testimonialCards');
-    let testimonialCount = 0;
-
-    addTestimonialCard.addEventListener('click', e => {
-        e.preventDefault();
-        testimonialCount++;
-
-        const cardHTML = `
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h3>Testimonial ${testimonialCount}</h3>
-                    <label class="form-label">Profile Picture</label>
-                    <input type="file" class="form-control mb-2" name="testimonialProfilePic" accept="image/*" required>
-                    
-                    <label class="form-label">Name</label>
-                    <input type="text" class="form-control mb-2" name="testimonialName" placeholder="Enter name" required>
-                    
-                    <label class="form-label">Designation</label>
-                    <input type="text" class="form-control mb-2" name="testimonialDesignation" placeholder="Enter designation" required>
-                    
-                    <label class="form-label">Testimonial</label>
-                    <textarea class="form-control" name="testimonialParagraph" rows="4" placeholder="Write the testimonial..." required></textarea>
-                </div>
-            </div>`;
-        
-        testimonialCards.insertAdjacentHTML('beforeend', cardHTML);
-    });
 
     // Code to dynamically add branches
     const addBranchButton = document.getElementById('addBranchButton');
