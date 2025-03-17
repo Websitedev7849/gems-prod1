@@ -14,6 +14,17 @@
     <%- include('./sections/navbar', {navLinks: contentJson.navLinks}) %>
     <!-- Navigation Bar ends -->
 
+    <% if (submissionSuccess) { %>
+        <div class="d-flex justify-content-center mt-4">
+            <div class="alert alert-success w-75" role="alert">
+                <h4 class="alert-heading">Well done!</h4>
+                <p>We have received your Testimonial. We will review it and publish it soon!</p>
+                <hr>
+                <p class="mb-0">Thank You!</p>
+            </div>
+        </div>
+    <% } %>
+
     <div class="container mt-3 mb-3">
         <div class="card shadow-lg p-4">
             <h2 class="text-center mb-4">Submit Your Testimonial</h2>

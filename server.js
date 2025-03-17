@@ -183,7 +183,7 @@ app.post("/testimonial-form", async (req, res) => {
     // write form data to content.json file
     writeFileSync(`${__dirname}/content/testimonial-buffer.json`, JSON.stringify(testimonialBuffer))
     
-    res.redirect("/testimonial-form");
+    res.redirect("/testimonial-form?submissionSuccess=true")
 })
 
 app.get("/user/testimonial-approval", (req, res) => {
@@ -221,7 +221,7 @@ app.put("/user/testimonial-approval", (req, res) => {
 
     writeFileSync(`${__dirname}/content/testimonial-buffer.json`, JSON.stringify(testimonialJson))
     writeFileSync(`${__dirname}/content/content.json`, JSON.stringify(contentJson))
-    res.send().status(200);
+    res.send().status(200)
 
 })
 
@@ -230,7 +230,7 @@ app.get("/:page", (req, res) => {
     const contentJson = JSON.parse(contentJsonString)
 
     try {
-        res.render(`${req.params.page}`, {contentJson})
+        res.render(`${req.params.page}`, {contentJson, submissionSuccess: req.query["submissionSuccess"]})
     } catch (error) {
         res.send("Something went wrong").status(501)
     }
